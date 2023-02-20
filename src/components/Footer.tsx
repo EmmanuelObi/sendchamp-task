@@ -4,11 +4,18 @@ import {
   Grid,
   GridItem,
   Heading,
+  HStack,
   Link,
   VStack,
+  Text,
+  Image,
+  chakra,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import uuid from 'react-uuid';
+import { siteAssets } from '../assets';
+import { ReactComponent as LogoSVG } from '../assets/images/SendchampFooterLogo.svg';
 
 const baseArea = `
 "products solutions"
@@ -26,10 +33,11 @@ const xlArea = `
 `;
 
 function Footer() {
+  const isDesktop = useBreakpointValue({ base: false, lg: true });
   return (
     <Box
       w="full"
-      py="50px"
+      pt="70px"
       px={{ base: 1, md: 6, lg: 10 }}
       as="footer"
       role="contentinfo"
@@ -38,7 +46,7 @@ function Footer() {
       <Container
         w="full"
         maxW="container.xl"
-        px={{ base: 4, md: 0 }}
+        px={{ base: 4, md: 7 }}
         color="#757F98"
       >
         <Grid
@@ -50,7 +58,7 @@ function Footer() {
           }}
         >
           <FooterSection
-            header="products"
+            header="Products"
             links={[
               {
                 isExternal: true,
@@ -71,7 +79,7 @@ function Footer() {
             templateArea="products"
           />
           <FooterSection
-            header="solutions"
+            header="Solutions"
             links={[
               {
                 isExternal: true,
@@ -97,7 +105,7 @@ function Footer() {
             templateArea="solutions"
           />
           <FooterSection
-            header="resources"
+            header="Resources"
             links={[
               { label: 'Developers', url: '' },
               { label: 'API Reference', url: '' },
@@ -110,7 +118,7 @@ function Footer() {
             templateArea="resources"
           />
           <FooterSection
-            header="company"
+            header="Company"
             links={[
               { label: 'About Us', url: '' },
               { label: 'Our Stories', url: '' },
@@ -122,7 +130,7 @@ function Footer() {
             templateArea="company"
           />
           <FooterSection
-            header="Follow Us"
+            header="Follow us"
             links={[
               { label: 'Twitter', url: '' },
               { label: 'LinkedIn', url: '' },
@@ -132,7 +140,7 @@ function Footer() {
             templateArea="followUs"
           />
           <FooterSection
-            header="Contact Us"
+            header="Contact us"
             links={[
               { label: '+234(0)18880261', url: '' },
               { label: 'sales@sendchamp.com', url: '' },
@@ -140,29 +148,54 @@ function Footer() {
             ]}
             templateArea="contactUs"
           />
-
-          {/* <GridItem area="company">
-            <VStack
-              w="full"
-              maxW="279px"
-              align="flex-start"
-              spacing="6"
-              pb="10"
-            >
-              <VStack w="full" spacing="0" align="flex-start">
-                <RouterLink to="/"></RouterLink>
-                <Text fontWeight="medium">
-                  A better way to compare, share, and manage schedules across
-                  time zones.
-                </Text>
-              </VStack>
-
-              <Text fontWeight="light" fontSize="sm" color="darkBlue.500">
-                &copy;{new Date().getFullYear()} - Zonely LLC
-              </Text> 
-            </VStack>
-          </GridItem> */}
         </Grid>
+
+        <HStack
+          w="full"
+          spacing={{ base: '0', lg: '16' }}
+          alignItems="center"
+          justifyContent={{ base: 'center', lg: 'space-between' }}
+          borderTop=" 1px solid"
+          borderBottom=" 1px solid"
+          borderColor="gray.600"
+          py="10"
+          px={{ base: '0', lg: '8' }}
+          flexWrap={{ base: 'wrap', lg: 'unset' }}
+        >
+          <RouterLink to="/">
+            <LogoSVG width="230px" />
+          </RouterLink>
+
+          <Text
+            fontWeight="medium"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            textAlign="center"
+            py="3"
+          >
+            {isDesktop && <Image src={siteAssets.NaijaIcon} width="40px" />}
+            <chakra.span ml="4" color="#fff" fontSize="sm">
+              142, Ahmadu Bello Way, Victoria Island, Lagos, Nigeria.
+            </chakra.span>
+          </Text>
+          <Text
+            fontWeight="medium"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            textAlign="center"
+          >
+            {isDesktop && <Image src={siteAssets.USAIcon} width="40px" />}
+            <chakra.span ml="4" color="#fff" fontSize="sm">
+              2055 Limestone Rd STE 200-C Wilmington, DE 19808
+            </chakra.span>
+          </Text>
+        </HStack>
+
+        <Text my="5" textAlign="center">
+          Built with ❤️ at Sendchamp Inc. - © 2023 | All rights reserved
+        </Text>
       </Container>
     </Box>
   );
@@ -182,12 +215,11 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
     <GridItem area={templateArea}>
       <VStack w="full" align="flex-start" spacing="3" pb="10">
         <Heading
-          fontSize="lg"
+          fontSize={{ base: 'sm', lg: 'lg' }}
           fontWeight="light"
           color="rgba(255,255,255,.56)"
-          textTransform="capitalize"
         >
-          {header.toLowerCase()}
+          {header}
         </Heading>
         <VStack w="full" align="flex-start" spacing="4">
           {links.map((link) => {
@@ -198,12 +230,11 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
                   as={RouterLink}
                   to={link.url}
                   fontWeight="light"
-                  textTransform="capitalize"
                   _hover={{ textDecoration: 'none', color: 'gray.400' }}
                   color="white"
-                  fontSize="md"
+                  fontSize={{ base: 'sm', lg: 'md' }}
                 >
-                  {link.label.toLowerCase()}
+                  {link.label}
                 </Link>
               );
 
@@ -213,12 +244,11 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
                 isExternal
                 href={link.url}
                 fontWeight="light"
-                textTransform="capitalize"
                 _hover={{ textDecoration: 'none', color: 'gray.400' }}
                 color="white"
-                fontSize="md"
+                fontSize={{ base: 'sm', lg: 'md' }}
               >
-                {link.label.toLowerCase()}
+                {link.label}
               </Link>
             );
           })}
