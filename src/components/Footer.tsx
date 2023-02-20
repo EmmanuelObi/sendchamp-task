@@ -171,7 +171,7 @@ function Footer() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            textAlign="center"
+            textAlign={{ base: 'center', lg: 'left' }}
             py="3"
           >
             {isDesktop && <Image src={siteAssets.NaijaIcon} width="40px" />}
@@ -184,7 +184,7 @@ function Footer() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            textAlign="center"
+            textAlign={{ base: 'center', lg: 'left' }}
           >
             {isDesktop && <Image src={siteAssets.USAIcon} width="40px" />}
             <chakra.span ml="4" color="#fff" fontSize="sm">

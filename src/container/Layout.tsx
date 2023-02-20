@@ -4,22 +4,24 @@ import Navbar from '../components/Navbar';
 
 function Layout({ children }: any) {
   return (
-    <Flex w="full" direction="column" flex="1" minH="100vh">
+    <Flex
+      w="full"
+      direction="column"
+      flex="1"
+      minH="100vh"
+      align="flex-start"
+      justify="flex-start"
+    >
       <Navbar />
       <Box
-        pt={{ base: '100px', lg: '120px' }}
-        pb="100px"
+        pt={{ base: '100px', lg: '70px' }}
         w="full"
         h="full"
         as="main"
         role="main"
         flex="1"
       >
-        <Box w="full" h="full" px={{ base: 4, md: 6, lg: 10 }}>
-          <Box w="full" maxW="container.xl" mx="auto">
-            {children}
-          </Box>
-        </Box>
+        {children}
       </Box>
       <Footer />
     </Flex>

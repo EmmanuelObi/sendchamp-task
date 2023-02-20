@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react';
 
-function MyButton() {
+function MyButton({ text }: { text?: string }) {
   return (
     <>
       <Button
@@ -12,7 +12,7 @@ function MyButton() {
         fontSize="sm"
         _hover={{ bg: '#197EEF' }}
       >
-        Get Started
+        {text ?? 'Get Started'}
       </Button>
     </>
   );

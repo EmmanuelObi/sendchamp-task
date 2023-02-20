@@ -177,7 +177,7 @@ function MenuFlyout({ trigger }: { trigger: any }) {
           </Accordion>
         </VStack>
 
-        <VStack w="full" spacing="5" position="fixed" bottom="0">
+        <VStack w="full" spacing="5" position="fixed" bottom="10">
           <Button
             bg="#fff"
             fontWeight="medium"

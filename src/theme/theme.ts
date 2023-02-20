@@ -26,6 +26,9 @@ const components: ThemeComponents = {
 };
 
 const colors = {
+  lightblue: {
+    100: '#2887f0',
+  },
   blue: {
     50: '#E9EBFB',
     100: '#C1C6F5',
@@ -65,7 +68,7 @@ const theme = extendTheme(
     },
   },
   withDefaultColorScheme({
-    colorScheme: 'blue',
+    colorScheme: 'lightblue',
   })
 );
 
