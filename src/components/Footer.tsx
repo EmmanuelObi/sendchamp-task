@@ -5,25 +5,24 @@ import {
   GridItem,
   Heading,
   Link,
-  Text,
   VStack,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import uuid from 'react-uuid';
 
 const baseArea = `
-"company company"
-"about resources"
-"products socials"
+"products solutions"
+"resources company"
+"followUs contactUs"
 `;
 
 const mdArea = `
-"company about socials"
-"resources products products"
+"products solutions resources"
+"company followUs contactUs"
 `;
 
 const xlArea = `
-"company about resources products socials"
+"products solutions resources company followUs contactUs"
 `;
 
 function Footer() {
@@ -34,6 +33,7 @@ function Footer() {
       px={{ base: 1, md: 6, lg: 10 }}
       as="footer"
       role="contentinfo"
+      bg="#0D253F"
     >
       <Container
         w="full"
@@ -49,7 +49,99 @@ function Footer() {
             lg: xlArea,
           }}
         >
-          <GridItem area="company">
+          <FooterSection
+            header="products"
+            links={[
+              {
+                isExternal: true,
+                label: 'Channels/Router',
+                url: '',
+              },
+              {
+                isExternal: true,
+                label: 'Verification',
+                url: '',
+              },
+              {
+                isExternal: true,
+                label: 'No-Code Tools',
+                url: '',
+              },
+            ]}
+            templateArea="products"
+          />
+          <FooterSection
+            header="solutions"
+            links={[
+              {
+                isExternal: true,
+                label: 'Onboard',
+                url: '',
+              },
+              {
+                isExternal: true,
+                label: 'Engage',
+                url: '',
+              },
+              {
+                isExternal: true,
+                label: 'Support',
+                url: '',
+              },
+              {
+                isExternal: true,
+                label: 'Retain',
+                url: '',
+              },
+            ]}
+            templateArea="solutions"
+          />
+          <FooterSection
+            header="resources"
+            links={[
+              { label: 'Developers', url: '' },
+              { label: 'API Reference', url: '' },
+              { label: 'Guides', url: '' },
+              { label: 'SDKs/Libraries', url: '' },
+              { label: 'Community', url: '' },
+              { label: 'Status Page', url: '' },
+              { label: 'Pricing', url: '' },
+            ]}
+            templateArea="resources"
+          />
+          <FooterSection
+            header="company"
+            links={[
+              { label: 'About Us', url: '' },
+              { label: 'Our Stories', url: '' },
+              { label: 'Careers', url: '' },
+              { label: 'Contact', url: '' },
+              { label: 'Terms of Use', url: '' },
+              { label: 'Privacy', url: '' },
+            ]}
+            templateArea="company"
+          />
+          <FooterSection
+            header="Follow Us"
+            links={[
+              { label: 'Twitter', url: '' },
+              { label: 'LinkedIn', url: '' },
+              { label: 'Facebook', url: '' },
+              { label: 'Instagram', url: '' },
+            ]}
+            templateArea="followUs"
+          />
+          <FooterSection
+            header="Contact Us"
+            links={[
+              { label: '+234(0)18880261', url: '' },
+              { label: 'sales@sendchamp.com', url: '' },
+              { label: 'help@sendchamp.com', url: '' },
+            ]}
+            templateArea="contactUs"
+          />
+
+          {/* <GridItem area="company">
             <VStack
               w="full"
               maxW="279px"
@@ -58,7 +150,7 @@ function Footer() {
               pb="10"
             >
               <VStack w="full" spacing="0" align="flex-start">
-                <RouterLink to="/">{/* <LogoSVG /> */}</RouterLink>
+                <RouterLink to="/"></RouterLink>
                 <Text fontWeight="medium">
                   A better way to compare, share, and manage schedules across
                   time zones.
@@ -67,73 +159,9 @@ function Footer() {
 
               <Text fontWeight="light" fontSize="sm" color="darkBlue.500">
                 &copy;{new Date().getFullYear()} - Zonely LLC
-              </Text>
+              </Text> 
             </VStack>
-          </GridItem>
-
-          <FooterSection
-            header="about"
-            links={[
-              {
-                isExternal: true,
-                label: 'about zonely',
-                url: '',
-              },
-              {
-                isExternal: true,
-                label: 'privacy',
-                url: '',
-              },
-              {
-                isExternal: true,
-                label: 'terms and conditions',
-                url: '',
-              },
-            ]}
-            templateArea="about"
-          />
-
-          <FooterSection
-            header="resources"
-            links={[
-              { label: 'pricing', url: '' },
-              { label: 'contact support', url: '' },
-            ]}
-            templateArea="resources"
-          />
-
-          <FooterSection
-            header="products"
-            links={[{ label: 'features', url: '' }]}
-            templateArea="products"
-          />
-
-          <FooterSection
-            header="socials"
-            links={[
-              {
-                label: 'linkedIn',
-                url: '',
-                isExternal: true,
-              },
-              {
-                label: 'instagram',
-                url: '',
-                isExternal: true,
-              },
-              {
-                label: 'twitter',
-                url: '',
-                isExternal: true,
-              },
-              {
-                label: 'feedback',
-                url: '',
-                isExternal: true,
-              },
-            ]}
-            templateArea="socials"
-          />
+          </GridItem> */}
         </Grid>
       </Container>
     </Box>
@@ -153,7 +181,12 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
   return (
     <GridItem area={templateArea}>
       <VStack w="full" align="flex-start" spacing="3" pb="10">
-        <Heading fontSize="xl" color="darkBlue.500" textTransform="capitalize">
+        <Heading
+          fontSize="lg"
+          fontWeight="light"
+          color="rgba(255,255,255,.56)"
+          textTransform="capitalize"
+        >
           {header.toLowerCase()}
         </Heading>
         <VStack w="full" align="flex-start" spacing="4">
@@ -164,9 +197,11 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
                   key={uuid()}
                   as={RouterLink}
                   to={link.url}
-                  fontWeight="medium"
+                  fontWeight="light"
                   textTransform="capitalize"
-                  _hover={{ textDecoration: 'none', color: 'blue.500' }}
+                  _hover={{ textDecoration: 'none', color: 'gray.400' }}
+                  color="white"
+                  fontSize="md"
                 >
                   {link.label.toLowerCase()}
                 </Link>
@@ -177,9 +212,11 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
                 key={uuid()}
                 isExternal
                 href={link.url}
-                fontWeight="medium"
+                fontWeight="light"
                 textTransform="capitalize"
-                _hover={{ textDecoration: 'none', color: 'blue.500' }}
+                _hover={{ textDecoration: 'none', color: 'gray.400' }}
+                color="white"
+                fontSize="md"
               >
                 {link.label.toLowerCase()}
               </Link>
