@@ -1,4 +1,4 @@
-# This is a brief implementation of Sendchamp's pricing page.
+# This is a brief implementation of Sendchamp's pricing page. [View Live](https://sendchamp-task.vercel.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), Chakra UI and Recoil JS for state management.
 
