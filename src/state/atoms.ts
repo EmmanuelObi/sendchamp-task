@@ -16,3 +16,8 @@ export const valueModalData = atom({
     hasMore: true,
   },
 });
+
+export const preferenceModalState = atom({
+  key: 'preferenceModalState',
+  default: false,
+});

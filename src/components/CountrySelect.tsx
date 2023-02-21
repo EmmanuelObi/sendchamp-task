@@ -1,16 +1,13 @@
 import { Select } from '@chakra-ui/react';
 
-const CountrySelect = () => {
+const CountrySelect = (props: any) => {
   return (
     <Select
-      maxW="300px"
+      {...props}
       bg="white"
       outline="none"
-      h="60px"
       rounded="lg"
       _focus={{ outline: 'none', border: 'none' }}
-      fontSize="lg"
-      my="2"
     >
       <option value="Afghanistan">Afghanistan</option>
       <option value="Aland Islands">Åland Islands</option>

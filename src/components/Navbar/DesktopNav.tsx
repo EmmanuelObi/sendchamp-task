@@ -6,8 +6,12 @@ import MyButton from './LoginButton';
 import { companyItems, developerItems, useCaseItems } from './navbarItems';
 import { NavbarLink } from './NavbarLink';
 import { NavbarMenuLink } from './NavbarLink/NavbarLinkMenuItem';
+import { useSetRecoilState } from 'recoil';
+import { preferenceModalState } from '../../state/atoms';
 
 function DesktopNav() {
+  const setIsOpen = useSetRecoilState(preferenceModalState);
+  const onOpenPreferenceModal = () => setIsOpen(true);
   return (
     <HStack w="full" h="full" align="center" justify="space-evenly">
       <Link to="/">
@@ -50,6 +54,7 @@ function DesktopNav() {
               verticalAlign: 'middle',
             }}
             cursor="pointer"
+            onClick={onOpenPreferenceModal}
           >
             🇳🇬
           </chakra.li>

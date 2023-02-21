@@ -32,8 +32,8 @@ const HeroBanner = () => {
         alignItems="center"
         flexDirection={{ base: 'column', md: 'row' }}
       >
-        <CountrySelect />
-        <CountrySelect />
+        <CountrySelect maxW="300px" h="60px" fontSize="lg" />
+        <CountrySelect maxW="300px" h="60px" fontSize="lg" />
       </HStack>
     </VStack>
   );
