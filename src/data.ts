@@ -1,0 +1,42 @@
+export const valuePackages = [
+  {
+    valueName: 'SMS',
+    preText: 'To Send SMS',
+    postText: 'To Receive SMS',
+    value: 'NGN 22.8800/sms',
+    isTag: true,
+    hasMore: true,
+  },
+  {
+    valueName: 'Voice',
+    preText: 'To Make Calls',
+    postText: 'To Receive Calls',
+    value: 'NGN 203.5000/sec',
+    isTag: true,
+    hasMore: false,
+  },
+  {
+    valueName: 'Email',
+    preText: 'Price Per Mail',
+    postText: '',
+    value: 'NGN 0.2200/email',
+    isTag: false,
+    hasMore: false,
+  },
+  {
+    valueName: 'WhatsApp',
+    preText: 'To Send Message',
+    postText: 'To Receive Message',
+    value: 'NGN 2.8325/msg',
+    isTag: true,
+    hasMore: true,
+  },
+  {
+    valueName: 'Verification',
+    preText: 'To Send OTP',
+    postText: 'To Receive OTP',
+    value: 'NGN 0.0000/OTP',
+    isTag: true,
+    hasMore: false,
+  },
+];

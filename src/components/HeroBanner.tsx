@@ -3,7 +3,7 @@ import CountrySelect from './CountrySelect';
 
 const HeroBanner = () => {
   return (
-    <VStack w="full" bg="#EEF4FF" py="16">
+    <VStack w="full" bg="#EEF4FF" py="24">
       <Text
         fontSize="5xl"
         color="black"

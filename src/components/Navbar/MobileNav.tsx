@@ -10,7 +10,7 @@ import {
 
 import { ReactComponent as LogoSVG } from '../../assets/images/sendchampLogo.svg';
 
-import { MinusIcon } from '@chakra-ui/icons';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 import MenuFlyout from './MenuFlyout';
 
@@ -31,7 +31,7 @@ function MobileNav() {
           bg="blue.50"
           size="sm"
           rounded="lg"
-          icon={<MinusIcon width="18px" height="18px" />}
+          icon={<HamburgerIcon width="18px" height="18px" />}
           onClick={onDrawerOpen}
         />
 
