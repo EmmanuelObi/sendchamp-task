@@ -49,6 +49,7 @@ function DesktopNav() {
               lineHeight: '1em',
               verticalAlign: 'middle',
             }}
+            cursor="pointer"
           >
             🇳🇬
           </chakra.li>

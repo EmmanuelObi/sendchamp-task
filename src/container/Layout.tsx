@@ -1,5 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
 import Footer from '../components/Footer';
+import ValueModal from '../components/modals/ValueModal';
 import Navbar from '../components/Navbar';
 
 function Layout({ children }: any) {
@@ -15,6 +16,7 @@ function Layout({ children }: any) {
       <Navbar />
       <Box pt="70px" w="full" h="full" as="main" role="main" flex="1">
         {children}
+        <ValueModal />
       </Box>
       <Footer />
     </Flex>

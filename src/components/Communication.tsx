@@ -31,7 +31,7 @@ const Communication = () => {
         w="full"
         justifyContent="center"
         alignItems="center"
-        spacing={{ base: '0', lg: '6' }}
+        spacing={{ base: '4', lg: '6' }}
         py="10"
       >
         <Button

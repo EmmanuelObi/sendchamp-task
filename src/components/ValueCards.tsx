@@ -15,9 +15,19 @@ import {
   Tag,
   Box,
 } from '@chakra-ui/react';
+import { useSetRecoilState } from 'recoil';
 import { valuePackages } from '../data';
+import { valueModalData, valueModalState } from '../state/atoms';
 
 const ValueCards = () => {
+  const setIsOpen = useSetRecoilState(valueModalState);
+  const setValueModalData = useSetRecoilState(valueModalData);
+  const onOpenModal = () => setIsOpen(true);
+
+  const handleModalData = (body: any) => {
+    setValueModalData(body);
+    onOpenModal();
+  };
   return (
     <VStack
       w="90%"
@@ -64,8 +74,12 @@ const ValueCards = () => {
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <chakra.span>{item.preText}</chakra.span>
-                    <chakra.span>{item.postText}</chakra.span>
+                    <chakra.span fontSize={{ base: 'sm', lg: 'lg' }}>
+                      {item.preText}
+                    </chakra.span>
+                    <chakra.span fontSize={{ base: 'sm', lg: 'lg' }}>
+                      {item.postText}
+                    </chakra.span>
                   </Text>
                   <Text
                     display="flex"
@@ -100,6 +114,7 @@ const ValueCards = () => {
                       textDecoration="underline"
                       color="#197EEF"
                       textAlign="center"
+                      onClick={() => handleModalData(item)}
                     >
                       More Details
                     </Button>
