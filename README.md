@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), Chakra UI and Recoil JS for state management.
 
+![screenshot](snap1.png)
+![screenshot](snap2.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
