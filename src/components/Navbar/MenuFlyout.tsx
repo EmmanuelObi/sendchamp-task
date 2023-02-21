@@ -21,18 +21,16 @@ function MenuFlyout({ trigger }: { trigger: any }) {
     <Container w="full" centerContent>
       <VStack
         w="full"
-        h="95vh"
+        h="100vh"
         justify="space-evenly"
         align="start"
-        position="absolute"
-        top="0"
-        bg="white"
-        left="0"
+        position="fixed"
+        bottom="0"
         spacing="0"
         overflowY="scroll"
       >
         <HStack
-          position="fixed"
+          position="absolute"
           top={{ base: '5', md: '10' }}
           w="full"
           justifyContent="space-between"
