@@ -12,7 +12,6 @@ import {
   chakra,
   useBreakpointValue,
 } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
 import uuid from 'react-uuid';
 import { siteAssets } from '../assets';
 import { ReactComponent as LogoSVG } from '../assets/images/SendchampFooterLogo.svg';
@@ -35,17 +34,10 @@ const xlArea = `
 function Footer() {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
   return (
-    <Box
-      w="full"
-      pt="70px"
-      px={{ base: 1, md: 6, lg: 10 }}
-      as="footer"
-      role="contentinfo"
-      bg="#0D253F"
-    >
+    <Box w="full" pt="70px" as="footer" role="contentinfo" bg="#0D253F">
       <Container
-        w="full"
         maxW="container.xl"
+        mx="auto"
         px={{ base: 4, md: 7 }}
         color="#757F98"
       >
@@ -162,9 +154,9 @@ function Footer() {
           px={{ base: '0', lg: '8' }}
           flexWrap={{ base: 'wrap', lg: 'unset' }}
         >
-          <RouterLink to="/">
+          <Link href="/">
             <LogoSVG width="230px" />
-          </RouterLink>
+          </Link>
 
           <Text
             fontWeight="medium"
@@ -227,8 +219,8 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
               return (
                 <Link
                   key={uuid()}
-                  as={RouterLink}
-                  to={link.url}
+                  as={'a'}
+                  href={link.url}
                   fontWeight="light"
                   _hover={{ textDecoration: 'none', color: 'gray.400' }}
                   color="white"
@@ -240,6 +232,7 @@ function FooterSection({ header, links, templateArea }: FooterSectionProps) {
 
             return (
               <Link
+                as="a"
                 key={uuid()}
                 isExternal
                 href={link.url}

@@ -34,10 +34,10 @@ function MenuFlyout({ trigger }: { trigger: any }) {
           position="fixed"
           top="0"
           w="full"
-          justify="space-between"
-          align="center"
+          justifyContent="space-between"
+          alignItems="center"
           px={{ base: '5', lg: '10' }}
-          py="10"
+          py={{ base: '5', md: '10' }}
           borderBottom={{ base: 'none', lg: '1px solid lightgray' }}
         >
           <LogoSVG width="200px" />
@@ -177,7 +177,7 @@ function MenuFlyout({ trigger }: { trigger: any }) {
           </Accordion>
         </VStack>
 
-        <VStack w="full" spacing="5" position="fixed" bottom="10">
+        <VStack w="full" spacing="3" position="fixed" bottom="3">
           <Button
             bg="#fff"
             fontWeight="medium"

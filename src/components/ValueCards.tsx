@@ -30,7 +30,7 @@ const ValueCards = () => {
   };
   return (
     <VStack
-      w="90%"
+      maxW="container.xl"
       py="10"
       mt={{ base: '10', lg: '-24' }}
       px={{ base: 1, md: 6, lg: 10 }}
