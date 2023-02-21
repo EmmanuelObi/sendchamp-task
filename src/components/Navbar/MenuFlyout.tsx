@@ -21,7 +21,7 @@ function MenuFlyout({ trigger }: { trigger: any }) {
     <Container w="full" centerContent>
       <VStack
         w="full"
-        h="100vh"
+        h="90vh"
         justify="space-evenly"
         align="start"
         position="absolute"
@@ -29,6 +29,7 @@ function MenuFlyout({ trigger }: { trigger: any }) {
         bg="white"
         left="0"
         spacing="0"
+        overflowY="scroll"
       >
         <HStack
           position="fixed"
@@ -53,8 +54,8 @@ function MenuFlyout({ trigger }: { trigger: any }) {
         <VStack
           w="full"
           position="fixed"
-          top="15vh"
-          h="60vh"
+          top="13vh"
+          h="50vh"
           justify="space-evenly"
           align="start"
           spacing="0"
