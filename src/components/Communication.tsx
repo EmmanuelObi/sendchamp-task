@@ -4,27 +4,28 @@ const Communication = () => {
   return (
     <VStack w="full" py="24">
       <Text
-        fontSize="4xl"
+        fontSize={{ base: '2xl', lg: '4xl' }}
         color="black"
         fontWeight="bold"
         textAlign="center"
         wordBreak="break-word"
         lineHeight="45px"
+        w={{ base: '80%', lg: '50%' }}
       >
-        Start building better communication <br /> experience with Sendchamp
+        Start building better communication experience with Sendchamp
       </Text>
       <Text
         py="5"
-        fontSize="lg"
+        fontSize={{ base: 'md', lg: 'lg' }}
         color="black"
         fontWeight="light"
         textAlign="center"
         wordBreak="break-word"
+        w={{ base: '90%', lg: '50%' }}
       >
-        Access a platform that is modernizing communications and making it{' '}
-        <br />
-        possible for your customers to communicate with your business the <br />{' '}
-        same way they do with their friends and family.
+        Access a platform that is modernizing communications and making it
+        possible for your customers to communicate with your business the same
+        way they do with their friends and family.
       </Text>
       <HStack
         w="full"

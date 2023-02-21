@@ -9,7 +9,7 @@ import { NavbarMenuLink } from './NavbarLink/NavbarLinkMenuItem';
 
 function DesktopNav() {
   return (
-    <HStack w="full" h="full" align="center" justify="space-between">
+    <HStack w="full" h="full" align="center" justify="space-evenly">
       <Link to="/">
         <LogoSVG width="200px" />
       </Link>

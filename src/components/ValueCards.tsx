@@ -15,7 +15,6 @@ import {
   Tag,
   Box,
 } from '@chakra-ui/react';
-import React from 'react';
 import { valuePackages } from '../data';
 
 const ValueCards = () => {
@@ -23,12 +22,21 @@ const ValueCards = () => {
     <VStack
       w="90%"
       py="10"
-      mt="-24"
+      mt={{ base: '10', lg: '-24' }}
       px={{ base: 1, md: 6, lg: 10 }}
       mx="auto"
       mb="20"
     >
-      <Grid w="full" templateColumns="repeat(3, 1fr)" flexWrap="wrap" gap={6}>
+      <Grid
+        w="full"
+        templateColumns={{
+          base: 'repeat(1, 1fr)',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+        }}
+        flexWrap="wrap"
+        gap={6}
+      >
         {valuePackages.map((item, id) => (
           <GridItem w="100%" key={id}>
             <Card

@@ -10,6 +10,7 @@ const CountrySelect = () => {
       rounded="lg"
       _focus={{ outline: 'none', border: 'none' }}
       fontSize="lg"
+      my="2"
     >
       <option value="Afghanistan">Afghanistan</option>
       <option value="Aland Islands">Åland Islands</option>

@@ -5,27 +5,33 @@ const HeroBanner = () => {
   return (
     <VStack w="full" bg="#EEF4FF" py="24">
       <Text
-        fontSize="5xl"
+        fontSize={{ base: '4xl', lg: '5xl' }}
         color="black"
         fontWeight="medium"
-        lineHeight="52px"
+        lineHeight={{ base: '38px', lg: '48px' }}
         textAlign="center"
         wordBreak="break-word"
       >
         Pricing for every <br /> business
       </Text>
       <Text
-        py="10"
-        fontSize="lg"
+        py={{ base: '5', lg: '10' }}
+        fontSize={{ base: 'md', lg: 'lg' }}
         color="black"
         fontWeight="light"
         textAlign="center"
         wordBreak="break-word"
+        w={{ base: '90%', lg: 'full' }}
       >
         No hidden fees or charges - simple & flexible pricing that fits with
         your <br /> business at any stage.
       </Text>
-      <HStack w="full" justifyContent="center" alignItems="center">
+      <HStack
+        w="full"
+        justifyContent="center"
+        alignItems="center"
+        flexDirection={{ base: 'column', md: 'row' }}
+      >
         <CountrySelect />
         <CountrySelect />
       </HStack>

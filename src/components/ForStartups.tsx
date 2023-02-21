@@ -4,7 +4,7 @@ const ForStartups = () => {
   return (
     <VStack w="full" bg="#EEF4FF" py="24">
       <Text
-        fontSize="4xl"
+        fontSize={{ base: '2xl', lg: '4xl' }}
         color="black"
         fontWeight="bold"
         textAlign="center"
@@ -15,11 +15,12 @@ const ForStartups = () => {
       <Text
         pt="5"
         pb="8"
-        fontSize="lg"
+        fontSize={{ base: 'md', lg: 'lg' }}
         color="black"
         fontWeight="light"
         textAlign="center"
         wordBreak="break-word"
+        w={{ base: '90%', lg: 'full' }}
       >
         Apply for $1,000 in credits, if you are a startup that is less than 3
         years <br /> old with less than $500k in total funding.

@@ -13,14 +13,7 @@ function Layout({ children }: any) {
       justify="flex-start"
     >
       <Navbar />
-      <Box
-        pt={{ base: '100px', lg: '70px' }}
-        w="full"
-        h="full"
-        as="main"
-        role="main"
-        flex="1"
-      >
+      <Box pt="70px" w="full" h="full" as="main" role="main" flex="1">
         {children}
       </Box>
       <Footer />
